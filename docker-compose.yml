@@ -1,7 +1,6 @@
 version: '3'
 services:
   leafy-postgres:
-    build: ./leafy-postgresql
     image: leafy-postgres:5.0.0-compose
     volumes:
       - mydata:/var/lib/postgresql/data
@@ -13,7 +12,6 @@ services:
     restart: always
 
   leafy-backend:
-    build: ./leafy-backend
     image: leafy-backend:5.0.0-compose
     environment:
       - DB_URL=leafy-postgres
