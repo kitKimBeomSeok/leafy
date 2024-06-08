@@ -12,6 +12,7 @@ services:
     restart: always
 
   leafy-backend:
+    build: ./leafy-backend
     image: leafy-backend:5.0.0-compose
     environment:
       - DB_URL=leafy-postgres
@@ -25,7 +26,6 @@ services:
     restart: on-failure
       
   leafy-front:
-    build: ./leafy-frontend
     image: leafy-front:5.0.0-compose
     environment:
       - BACKEND_HOST=leafy-backend
